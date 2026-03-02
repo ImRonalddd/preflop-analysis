@@ -1,0 +1,6 @@
+# Next.js
+nlh-analyzer/.next/
+nlh-analyzer/node_modules/
+
+# OS
+.DS_Store
