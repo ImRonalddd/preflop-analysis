@@ -369,6 +369,11 @@ function parseHand(lines: string[], timestamp: string, sessionPrefix?: string): 
     }
   }
 
+  // Infer SB as half BB if it wasn't found (SB sitting out, etc.)
+  if (smallBlind === 0 && bigBlind > 0) {
+    smallBlind = bigBlind / 2;
+  }
+
   const stakeLevel = detectStakeLevel(smallBlind, bigBlind);
 
   // Extract preflop actions (after blinds, before Flop: or hand end)
